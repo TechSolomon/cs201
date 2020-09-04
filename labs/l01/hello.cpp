@@ -8,8 +8,7 @@ using std::cout;
 using std::endl;
 using std::cin;
 
-int main()
-{
+int main() {
     cout << "Hello, world." << endl;
     cout << "Hello, world." << endl;
     cout << "Hello, world." << endl;

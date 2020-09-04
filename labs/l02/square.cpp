@@ -8,8 +8,7 @@ using std::cout;
 using std::endl;
 using std::cin;
 
-int main()
-{
+int main() {
     int n;
     cout << "Type in an integer: ";
     cin >> n;

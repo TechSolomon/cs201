@@ -20,6 +20,10 @@ int main() {
         cout << miles << " mile is equal to " << kilometers << " kilometers." << endl; 
     }
 
+    else if (miles < 0) {
+        cout << "Please enter a positive value for miles and try again." << endl;
+    }
+
     else {
         cout << miles << " miles is equal to " << kilometers << " kilometers." << endl; 
     }

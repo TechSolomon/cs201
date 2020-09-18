@@ -4,6 +4,8 @@
 // Switch example for CS 201.
 
 #include <iostream>
+#include <stdio.h>
+#include <math.h>
 using std::cout;
 using std::endl;
 using std::cin;
@@ -11,7 +13,7 @@ using std::cin;
 int main() {
 
     int n, first_number, second_number;
-    int addition, subtraction, multiplication, division = 0;
+    int addition, subtraction, multiplication, division, exponent = 0;
 
     cout << "Enter the 1st number: ";
     cin >> first_number;
@@ -38,6 +40,11 @@ int main() {
     case 4:
         division = (first_number / second_number);
         cout << first_number << " / " << second_number << " = " << division << endl;
+        break;
+
+    case 5:
+        exponent = pow(first_number, second_number);
+        cout << first_number << " ^ " << second_number << " = " << exponent << endl;
         break;
     
     default:

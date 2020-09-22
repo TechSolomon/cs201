@@ -1,7 +1,7 @@
 // money.cpp
 // Solomon Himelbloom
 // 20 September 2020
-// Money example for CS 201.
+// Money (coins to dollars) example for CS 201.
 
 #include <iostream>
 using std::cout;
@@ -42,20 +42,38 @@ int main() {
 
     // Print out the total number and type of each coin.
     cout << " " << endl;
-    coinReceipt(pennies, "pennies");
-    coinReceipt(nickels, "nickels");
-    coinReceipt(dimes, "dimes");
-    coinReceipt(quarters, "quarters");
-    coinReceipt(half_dollars, "half dollars");
-    coinReceipt(one_dollars, "one-dollar coins");
+    if (pennies == 1 || nickels == 1 || dimes == 1 
+    || quarters == 1 || half_dollars == 1 || one_dollars == 1) {
+        coinReceipt(pennies, "penny");
+        coinReceipt(nickels, "nickel");
+        coinReceipt(dimes, "dime");
+        coinReceipt(quarters, "quarter");
+        coinReceipt(half_dollars, "half dollar");
+        coinReceipt(one_dollars, "one-dollar coin");
+    }
+
+    else if (pennies == 0 || pennies > 1 || nickels == 0 || nickels > 1 ||
+    dimes == 0 || dimes > 1 || quarters == 0 || quarters > 1 ||
+    half_dollars == 0 || half_dollars > 1 || one_dollars == 0 || one_dollars > 1) {
+        coinReceipt(pennies, "pennies");
+        coinReceipt(nickels, "nickels");
+        coinReceipt(dimes, "dimes");
+        coinReceipt(quarters, "quarters");
+        coinReceipt(half_dollars, "half dollars");
+        coinReceipt(one_dollars, "one-dollar coins");
+    }
+
+    else {
+        cout << "Please enter a positive number of coins. Thanks!" << endl;
+    }
 
     // Convert number of coins to dollars.
-    pennies = 0.01*pennies;
-    nickels = 0.05*nickels;
-    dimes = 0.10*dimes;
-    quarters = 0.25*quarters;
-    half_dollars = 0.50*half_dollars;
-    one_dollars = 1.00*one_dollars; 
+    pennies *= 0.01;
+    nickels *= 0.05;
+    dimes *= 0.10;
+    quarters *= 0.25;
+    half_dollars *= 0.50;
+    one_dollars *= 1.00; 
 
     cout << " " << endl;
     total_coins = (pennies + nickels + dimes + quarters + half_dollars + one_dollars);

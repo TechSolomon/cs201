@@ -11,5 +11,20 @@ using std::cin;
 using namespace std;
 
 int main() {
-    cout << "The Rice & Chessboard Story: Exponential Growth" << endl;
+    int i = 1;
+    int current_square, previous_square = 0;
+
+    current_square = 0;
+    previous_square = 0;
+
+    for (i = 1; i < 4; i++) {
+
+        current_square += 1;
+
+        cout << "Current Square: " << current_square << endl;
+        cout << "Previous Square: " << previous_square << endl;
+        cout << " " << endl;
+    }
+
+    return 0;
 }

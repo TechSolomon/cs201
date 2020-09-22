@@ -2,7 +2,6 @@
 // Solomon Himelbloom
 // 14 September 2020
 // Function example for CS 201.
-// Read in an integer and output the factorial.
 
 #include <iostream>
 #include <stdio.h>

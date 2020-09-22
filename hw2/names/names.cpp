@@ -7,6 +7,25 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+using std::cout;
+using std::endl;
+using std::cin;
+
+using namespace std;
+
+void codeEncapsulation() {
+    void InputNames(std::vector<std::string> & names);
+}
+
+// void nameSearch(bool) { 
+//     bool DoesNameExist(const std::string & nametoFind, const std::vector<std::string> & names);
+
+//     return true;
+// }
+
+void PrintNames(string Names) {
+    bool DoesNameExist(const std::string & nametoFind, const std::vector<std::string> & names);
+}
 
 int main (int argc, char ** argv) {
     std::vector<std::string> names;

@@ -1,8 +1,10 @@
-// function.cpp
-// Solomon Himelbloom
-// 16 September 2020
-// Header file example for CS 201.
-// Includes downloaded files from intio.cpp and intio.hpp
+//
+//  main.cpp
+//  l07
+//
+//  Created by Solomon on 9/22/20.
+//  Copyright © 2020 TechSolomon. All rights reserved.
+//
 
 #include <iostream>
 #include <stdio.h>
@@ -11,18 +13,16 @@ using std::cout;
 using std::endl;
 using std::cin;
 
-int main() {
-    cout << "Test print statement." << endl;
+int main(int argc, const char * argv[]) {
+    // insert code here...
+    // std::cout << "Hello, World!\n";
     
-    // cout << "Type an integer: ";
-    // int hello = getInt();
-
-    // putInt(333, 10);
-    // cout << endl;
-    // putInt(123456, 10);
-    // cout << endl;
-    // putInt(-7, 10);
-    // cout << endl;
-
+     putInt(333, 10);
+     cout << endl;
+     putInt(123456, 10);
+     cout << endl;
+     putInt(-7, 10);
+     cout << endl;
+    
     return 0;
 }

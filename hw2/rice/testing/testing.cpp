@@ -1,13 +1,15 @@
-// rice.cpp
+// testing.cpp
 // Solomon Himelbloom
-// 20 September 2020
-// Rice and chessboard (exponential growth) example for CS 201.
+// 22 September 2020
+// Rice example for CS 201.
 
 #include <iostream>
 #include <math.h>
 using std::cout;
 using std::endl;
 using std::cin;
+
+using namespace std;
 
 double currentSquare (int square) {
     return pow(2, square - 1);
@@ -23,16 +25,15 @@ double previousSquare (int square) {
 }
 
 int main() {
-    double i, requested_square = 0;
-    double square_number = 0;
-    double current_square = 0;
-    double previous_square = 0;
+    int i, requested_rice = 0;
+    int square_number = 0;
+    int current_square = 0;
+    int previous_square = 0;
 
-    cout << "What is your desired chess square? ";
-    cin >> requested_square;
-    cout << " " << endl;
+    cout << "What is your desired amount of rice? [in grains] ";
+    cin >> requested_rice;
 
-    for (i = 0; i < requested_square; i++) {
+    for (i = 0; i < requested_rice; i++) {
         previous_square += current_square;
         square_number += 1;
         current_square = pow(2, square_number - 1);
@@ -43,10 +44,7 @@ int main() {
         cout << " " << endl;
     }
 
-    cout << "cs201 – hw2 questions" << endl;
-    cout << "At least 1,000 (grains of rice): SQUARE #10" << endl;
-    cout << "At least 1,000,000 (grains of rice): SQUARE #21" << endl;
-    cout << "At least 1,000,000,000 (grains of rice): SQUARE #31" << endl;
+    cout << "Grains of rice requested: " << requested_rice << endl;
     cout << "Largest number (int): SQUARE #31" << endl;
     cout << "Largest number (float): SQUARE #1024" << endl;
 }

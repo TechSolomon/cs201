@@ -11,8 +11,6 @@ using std::cout;
 using std::endl;
 using std::cin;
 
-using namespace std;
-
 void inputNames(std::vector<std::string> & names) {
     for (int i = 0; i < 10; i++) {
         std::string name;
@@ -23,11 +21,19 @@ void inputNames(std::vector<std::string> & names) {
 }
 
 bool doesNameExist(const std::string & nametoFind, const std::vector<std::string> & names) {
-    return true;
+    for (int i = 0; i < names.size(); i++) {
+
+    }
+
+    return false;
 }
 
 void printNames(std::vector<std::string> & names) {
     cout << "This prints the names that the user provided." << endl;
+
+    for (int i = 0; i < names.size(); i++) {
+
+    }
 }
 
 void searchNames(std::vector<std::string> & names) { 
@@ -35,7 +41,7 @@ void searchNames(std::vector<std::string> & names) {
 }
 
 void encryptNames(std::vector<std::string> & names) {
-    cout << "This encrypts the aformentioned names using a cipher." << endl;
+    cout << "COMING SOON: This encrypts the aformentioned names using a cipher." << endl;
 }
 
 void sortNames(std::vector<std::string> & names) { 
@@ -44,18 +50,36 @@ void sortNames(std::vector<std::string> & names) {
 
 void countNames(std::vector<std::string> & names) { 
     cout << "Learn the number of characters in each string." << endl;
+
+    int totalChars = names.size();
+    cout << "Total Names: " << totalChars << endl;
 }
 
 int main (int argc, char ** argv) {
     std::vector<std::string> names;
+    std::string search_name;
+    int name = 1;
 
     inputNames(names);
-    
+    cout << " " << endl;
     printNames(names);
+
+    cout << "What name would you like to search for? ";
+    cin >> search_name;
+
+    if (name == 1) {
+        cout << search_name << " does exist in the list above." << endl;
+    }
+
+    else {
+        cout << search_name << " does not exist in the list above." << endl;
+    }
+    
+    // cout << doesNameExist(search_name, names);
+
     searchNames(names);
-    encryptNames(names);
-    sortNames(names);
     countNames(names);
+    printNames(names);
     
     return 0;
 }

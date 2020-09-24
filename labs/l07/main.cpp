@@ -14,15 +14,27 @@ using std::endl;
 using std::cin;
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    // std::cout << "Hello, World!\n";
     
-     putInt(333, 10);
-     cout << endl;
-     putInt(123456, 10);
-     cout << endl;
-     putInt(-7, 10);
-     cout << endl;
+    cout << "Type an integer: ";
+    int num = getInt();
+    
+    putInt(123456789, 10);
+    cout << endl;
+    putInt(987654321, 10);
+    cout << endl;
+    putInt(111111111, 10);
+    cout << endl;
+    
+    cout << "-=-=-=-=-=-=-=-=-=-" << endl;
+    
+    putInt(333, 10);
+    cout << endl;
+    putInt(123456, 10);
+    cout << endl;
+    putInt(-7, 10);
+    cout << endl;
+    
+    cout << "Printed Integer = " << num << endl;
     
     return 0;
 }

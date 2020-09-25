@@ -8,16 +8,15 @@
 #include <math.h>
 #include <iostream>
 #include <stdio.h>
+using std::cin;
 using std::cout;
 using std::endl;
-using std::cin;
 
-
-int doInput () {
+int doInput() {
     return getInt();
 }
 
-int compute (int n) {
+int compute(int n) {
     return pow(n, 2);
 }
 
@@ -28,8 +27,15 @@ int main() {
     int d = doInput();
     cout << "integer = " << d << endl;
 
-    int e = compute(d);
-    cout << "(integer)^2 = " << e << endl;
+    if (d <= 0) {
+        int d = compute(0);
+        cout << "(integer)^2 = " << d << endl;
+    }
+
+    else {
+        int e = compute(d);
+        cout << "(integer)^2 = " << e << endl;
+    }
 
     return 0;
 }

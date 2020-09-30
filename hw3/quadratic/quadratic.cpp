@@ -8,6 +8,15 @@ using std::cout;
 using std::endl;
 using std::cin;
 
-int main() {
+void quadraticFormula(int a, int b, int c) {
+    cout << "This is what a quadratic formula looks like..." << endl;
     cout << "x = -b +/- sqrt(b^2-4ac)/(2a)" << endl;
+    cout << " " << endl;
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+    cout << "c = " << c << endl;
+}
+
+int main() {
+    quadraticFormula(1, 2, 3);
 }

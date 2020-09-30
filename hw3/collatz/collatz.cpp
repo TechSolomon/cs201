@@ -8,6 +8,16 @@ using std::cout;
 using std::endl;
 using std::cin;
 
+void collatzSequence(int n) {
+    return;
+}
+
 int main() {
-    cout << "Hello, Collatz." << endl;
+    int init_value;
+    cout << "Input a positive integer: ";
+    cin >> init_value;
+
+    collatzSequence(init_value);
+
+    cout << "Collatz Sequence: " << init_value << endl;
 }

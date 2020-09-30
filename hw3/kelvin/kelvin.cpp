@@ -18,5 +18,29 @@ using std::endl;
 //     double c = 0;
 //     cin >> d;
 //     double k = ctok("c");
-//     cout << k << '/n'
+//     cout << k << '/n';
 // }
+
+// FINAL: Converts Celsius to Kelvin
+
+// changed from double to void
+double ctok(double c) {
+    // changed operation from addition to subtraction
+    int k = c;
+    c -= 273.15;
+    // needs to return ctok instead of int
+    return c;
+}
+
+int main() {
+    double c = 0;
+    // d is not defined; changed to the double c
+    cin >> c;
+    // new mention of k: needs to be initialized
+    double k;
+    // c is passed into the ctok function w/o quotes
+    k = ctok(c);
+    // escape character was facing the wrong direction
+    cout << k << '\n';
+}
+

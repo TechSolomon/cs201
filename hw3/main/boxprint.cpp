@@ -5,6 +5,7 @@
 
 #include "boxer.hpp"
 #include <iostream>
+#include <string>
 using std::string;
 using std::cout;
 using std::endl;
@@ -45,7 +46,11 @@ int main(int argc, char * argv[]) {
         cout << "" << endl;
         cout << "BOX INPUT TEXT: " << box_text << endl;
         cout << "# OF LAYERS: " << box_layers << endl;
+        cout << "STRING LENGTH: " << box_text.size() << endl;
     }
 
-    // TODO: add user request to exit the program
+    cout << "Press ENTER to quit ";
+    while (cin.get() != '\n') ;
+
+    return 0;
 }

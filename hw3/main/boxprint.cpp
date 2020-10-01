@@ -5,10 +5,21 @@
 
 #include "boxer.hpp"
 #include <iostream>
+using std::string;
 using std::cout;
 using std::endl;
 using std::cin;
 
 int main(int argc, char * argv[]) {
-    cout << "Hello, boxprint." << endl;
+    std::string box_text = "";
+    int box_layers = 0;
+
+    cout << "Input text to be included in the box: ";
+    cin >> box_text;
+
+    cout << "Enter an integer (number of layers): ";
+    cin >> box_layers;
+
+    cout << "BOX TEXT: " << box_text << endl;
+    cout << "# OF LAYERS: " << box_layers << endl;
 }

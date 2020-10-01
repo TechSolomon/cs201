@@ -20,6 +20,32 @@ int main(int argc, char * argv[]) {
     cout << "Enter an integer (number of layers): ";
     cin >> box_layers;
 
-    cout << "BOX TEXT: " << box_text << endl;
-    cout << "# OF LAYERS: " << box_layers << endl;
+    if (box_layers <= 0) {
+        cout << "You typed in zero, a negative number, or a letter." << endl;
+        cout << "Please try again with a positive integer." << endl;
+    }
+
+    else {
+        cout << "" << endl;
+
+        int i = 0;
+        
+        while (i < box_layers) {
+            int j = 1;
+            while (j < box_layers) {
+                cout << "*";
+                j++;
+            }
+        
+            cout << "*";
+            cout << "\n";
+            i++;
+        }
+
+        cout << "" << endl;
+        cout << "BOX INPUT TEXT: " << box_text << endl;
+        cout << "# OF LAYERS: " << box_layers << endl;
+    }
+
+    // TODO: add user request to exit the program
 }

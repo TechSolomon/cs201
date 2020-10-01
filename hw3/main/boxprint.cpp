@@ -30,5 +30,9 @@ int main(int argc, char * argv[]) {
         boxPrinter(box_text, box_layers);
     }
 
-    // TODO: add user-generated repeated output with an appropriate exit.
+    cout << "" << endl;
+    cout << "Press ENTER to quit ";
+    while (cin.get() != '\n') ;
+
+    return 0;
 }

@@ -22,7 +22,7 @@ void boxPrinter(std::string name, int boarder) {
     
     while (i < boarder) {
         int j = 1;
-        while (j < boarder) {
+        while (j < name.size() + 2 + (boarder * 2)) {
             cout << "*";
             j++;
         }
@@ -30,5 +30,77 @@ void boxPrinter(std::string name, int boarder) {
         cout << "*";
         cout << "\n";
         i++;
+    }
+    
+    int left1 = 0;
+    while (left1 < boarder) {
+        cout << "*";
+        left1++;
+    }
+
+    int center1 = 0;
+    while (center1 < name.size() + 2) {
+        cout << " ";
+        center1++;
+    }
+
+    int right1 = 0;
+    while (right1 < boarder) {
+        cout << "*";
+        right1++;
+    }
+    
+    cout << " " << endl;
+
+    int left_spaces = 0;
+    while (left_spaces < boarder) {
+        cout << "*";
+        left_spaces++;
+    }
+    
+    cout << " ";
+    cout << name;
+    cout << " ";
+
+    int right_spaces = 0;
+    while (right_spaces < boarder) {
+        cout << "*";
+        right_spaces++;
+    }
+
+    cout << " " << endl;
+
+    int left2 = 0;
+    while (left2 < boarder) {
+        cout << "*";
+        left2++;
+    }
+
+    int center2 = 0;
+    while (center2 < name.size() + 2) {
+        cout << " ";
+        center2++;
+    }
+
+    int right2 = 0;
+    while (right2 < boarder) {
+        cout << "*";
+        right2++;
+    }
+
+    cout << " " << endl;
+
+    int k = 0;
+
+    while (k < boarder) {
+        int l = 1;
+        while (l < name.size() + 2 + (boarder * 2)) {
+            cout << "*";
+            l++;
+        }
+    
+        cout << "*";
+        cout << "\n";
+        k++;
     }
 }

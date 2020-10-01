@@ -27,30 +27,8 @@ int main(int argc, char * argv[]) {
     }
 
     else {
-        cout << "" << endl;
-
-        int i = 0;
-        
-        while (i < box_layers) {
-            int j = 1;
-            while (j < box_layers) {
-                cout << "*";
-                j++;
-            }
-        
-            cout << "*";
-            cout << "\n";
-            i++;
-        }
-
-        cout << "" << endl;
-        cout << "BOX INPUT TEXT: " << box_text << endl;
-        cout << "# OF LAYERS: " << box_layers << endl;
-        cout << "STRING LENGTH: " << box_text.size() << endl;
+        boxPrinter(box_text, box_layers);
     }
 
-    cout << "Press ENTER to quit ";
-    while (cin.get() != '\n') ;
-
-    return 0;
+    // TODO: add user-generated repeated output with an appropriate exit.
 }

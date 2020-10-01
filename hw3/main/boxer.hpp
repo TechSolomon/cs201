@@ -9,6 +9,6 @@
 #ifndef FILE_BOXER_HPP_INCLUDED
 #define FILE_BOXER_HPP_INCLUDED
 
-void boxPrinter(int boarder, string name);
+void boxPrinter(std::string name, int boarder);
 
 #endif

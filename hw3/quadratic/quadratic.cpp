@@ -10,13 +10,17 @@ using std::endl;
 using std::cin;
 
 void quadraticFormula(int a, int b, int c) {
-    float discriminant;
+    float discriminant, x1, x2;
     discriminant = b*b - 4*a*c;
+    x1 = (-b + sqrt(discriminant)) / (2*a);
+    x2 = (-b - sqrt(discriminant)) / (2*a);
 
     cout << "a = " << a << endl;
     cout << "b = " << b << endl;
     cout << "c = " << c << endl;
     cout << "discriminant = " << discriminant << endl;
+    cout << "x1 = " << x1 << endl;
+    cout << "x2 = " << x2 << endl;
 
     cout << " " << endl;
 }
@@ -25,7 +29,7 @@ void quadraticFormula(int a, int b, int c) {
 int main() {
     cout << "" << endl;
 
-    quadraticFormula(1, 2, 3);
-    quadraticFormula(4, 5, 6);
-    quadraticFormula(7, 8, 9);
+    quadraticFormula(1, 4, 3);
+    quadraticFormula(1, -9, 8);
+    quadraticFormula(-1, 8, -15);
 }

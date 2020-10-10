@@ -8,11 +8,30 @@
 #include <string>
 #include <vector>
 
+#include "database.hpp"
+
 using std::cin;
 using std::cout;
 using std::endl;
 using std::string;
 using std::vector;
+
+std::map<std::string, MyDatabaseRecord> theDatabase;
+
+// TODO: Implement functions here.
+
+// UpdateRecord(key, record) sets the databae to the new value
+// @param {string} key
+// @param {MyDatabaseRecord} record
+// @return true if operation successful
+bool UpdateRecord(const std::string &key, const MyDatabaseRecord &record) {
+    auto it = theDatabase.find(key);
+    if (it == theDatabase.end()) {
+        return false;
+    }
+    theDatabase[key] = record;
+    return true;
+}
 
 int main() {
     cout << "Hello, database." << endl;

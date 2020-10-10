@@ -6,6 +6,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
+#include <vector>
 
 #include "tokenizer.hpp"
 
@@ -16,5 +17,11 @@ using std::string;
 using std::vector;
 
 int main() {
-    cout << "Hello, tokenizer." << endl;
+    std::string user_input = "";
+
+    cout << "Please type in some text." << endl;
+    cout << "When you are done, type “End”, “end” or “END”: ";
+    cin >> user_input;
+
+    cout << "\n" << "User Input: " << user_input << endl;
 }

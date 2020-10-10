@@ -8,4 +8,6 @@
 
 #include <string>
 
+bool ReadLine(std::string& str);
+
 #endif /* TOKENIZER_HPP_ */

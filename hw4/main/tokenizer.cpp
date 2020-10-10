@@ -6,6 +6,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
+#include <vector>
 
 #include "tokenizer.hpp"
 
@@ -14,3 +15,14 @@ using std::cout;
 using std::endl;
 using std::string;
 using std::vector;
+
+// Input a line of text from the user.
+bool ReadLine(std::string& str) {
+    std::getline(std::cin, str);
+    if (str == "" || std::cin) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}

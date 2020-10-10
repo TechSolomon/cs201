@@ -31,8 +31,15 @@ bool ReadLine(std::string& str) {
 unsigned StringToTokenWS(const std::string &input, std::vector<std::string> &tokens) {
     // std::istringstream();
     for (int i = 0; i < input.size(); i++) {
-        // add vector push back here.
+        // TODO: add vector push back here.
     }
     tokens.push_back("\n");
     return tokens.size();
+}
+
+// Determine type of token (integer/identifier/string/whitespace/whitespace/unknown).
+void AnalyzeTokens(const std::vector<std::string> &tokens) {
+    for (int i = 0; i < tokens.size(); i++) {
+        // TODO: add checks for type of token here.
+    }
 }

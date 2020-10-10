@@ -36,6 +36,18 @@ int main(int argc, char *argv[]) {
         randomNumber();
     }
     
+    else if (user_input > 9999) {
+        cout << "Input must be 4 digits in length (less than 10,000)." << endl;
+    }
+    
+    else if (0 < user_input && user_input < 1000) {
+        cout << "Input must be 4 digits in length (greater than 999)." << endl;
+    }
+    
+    else if (user_input < 0) {
+        randomNumber();
+    }
+    
     else {
         guessingGame();
     }

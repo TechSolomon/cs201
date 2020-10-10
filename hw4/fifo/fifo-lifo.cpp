@@ -1,7 +1,7 @@
 // fifo-lifo.cpp
 // Solomon Himelbloom
 // 9 October 2020
-// Tokenizer example for CS 201.
+// FIFO/LIFO example for CS 201.
 
 #include <iostream>
 #include <stdio.h>
@@ -34,5 +34,5 @@ bool TestFifo();
 bool TestLifo();
 
 int main() {
-    cout << "Hello, FIFO." << endl;
+    cout << "Hello, FIFO/LIFO." << endl;
 }

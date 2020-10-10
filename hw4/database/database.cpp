@@ -33,6 +33,20 @@ bool UpdateRecord(const std::string &key, const MyDatabaseRecord &record) {
     return true;
 }
 
+// ReadRecord(key, record) copies the information from the data base to
+// a user supplied record
+// @param {string} key
+// @param {MyDatabaseRecord} record
+// @returns false if the record does not exist
+bool ReadRecord(const std::string &key, MyDatabaseRecord &record) {
+    auto it = theDatabase.find(key);
+    if (it == theDatabase.end()) {
+        return false;
+    }
+    // return = it- >second;
+    return true;
+}
+
 int main() {
     cout << "Hello, database." << endl;
 }

@@ -10,4 +10,6 @@
 
 bool ReadLine(std::string& str);
 
+unsigned StringToTokenWS(const std::string &input, std::vector<std::string> &tokens);
+
 #endif /* TOKENIZER_HPP_ */

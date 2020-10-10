@@ -6,7 +6,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
-#include <vector>
+#include <map>
 
 #include "database.hpp"
 
@@ -15,3 +15,7 @@ using std::cout;
 using std::endl;
 using std::string;
 using std::vector;
+
+int main() {
+    cout << "Hello, database/crud." << endl;
+}

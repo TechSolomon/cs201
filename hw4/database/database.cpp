@@ -6,7 +6,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
-#include <vector>
+#include <map>
 
 #include "database.hpp"
 
@@ -45,8 +45,4 @@ bool ReadRecord(const std::string &key, MyDatabaseRecord &record) {
     }
     // return = it- >second;
     return true;
-}
-
-int main() {
-    cout << "Hello, database." << endl;
 }

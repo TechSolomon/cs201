@@ -18,6 +18,7 @@ using std::vector;
 
 int main() {
     std::string user_input = "";
+    std::vector<std::string> searchTokens;
 
     cout << "Please type in some text." << endl;
     cout << "When you are done, type “End”, “end” or “END”: ";

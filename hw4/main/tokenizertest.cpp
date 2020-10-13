@@ -17,12 +17,16 @@ using std::string;
 using std::vector;
 
 int main() {
-    std::string user_input = "";
-    std::vector<std::string> searchTokens;
+    std::string exit_code;
+    std::vector<std::string> tokens;
 
-    cout << "Please type in some text." << endl;
-    cout << "When you are done, type “End”, “end” or “END”: ";
-    cin >> user_input;
+    cout << "Please type in some text. When you are done, type “End”, “end” or “END”: ";
 
-    cout << "\n" << "User Input: " << user_input << endl;
+    do {
+        cin >> exit_code;
+    } while (exit_code != "End" && exit_code != "end" && exit_code != "END");
+
+    AnalyzeTokens(tokens);
+
+    return 0;
 }

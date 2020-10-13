@@ -28,8 +28,8 @@ void randomNumber() {
 }
 
 void guessingGame() {
-    int bulls = 0;
-    int cows = 0;
+    int bulls = 1;
+    int cows = 1;
 
     vector<int> numberVector(4);
     vector<char> guessVector(0);
@@ -41,7 +41,23 @@ void guessingGame() {
     }
     
     cout << endl;
-    cout << "1 bull and 1 cow." << endl;
+
+    if (bulls != 1 && cows != 1) {
+        cout << bulls << " bulls and " << cows << " cows." << endl;
+    }
+
+    else if (bulls != 1 && cows == 1) {
+        cout << bulls << " bulls and " << cows << " cow." << endl;
+    }
+
+    else if (bulls == 1 && cows == 1) {
+        cout << bulls << " bull and " << cows << " cows" << endl;
+    }
+
+    else {
+        cout << bulls << " bull and " << cows << " cow" << endl;
+    }
+
 }
 
 int main(int argc, char *argv[]) {

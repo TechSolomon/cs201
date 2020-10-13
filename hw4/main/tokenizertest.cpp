@@ -17,15 +17,26 @@ using std::string;
 using std::vector;
 
 int main() {
+    std::string str;
     std::string exit_code;
+    std::string user_input = "";
     std::vector<std::string> tokens;
 
     cout << "Please type in some text. When you are done, type “End”, “end” or “END”: ";
 
     do {
         cin >> exit_code;
-    } while (exit_code != "End" && exit_code != "end" && exit_code != "END");
 
+        if (ReadLine(str)) {
+            StringToTokenWS(str, tokens);
+        }
+
+    } while (exit_code != "End" && exit_code != "end" && exit_code != "END");
+    
+    cout << "\n" << "TOKENIZER OUTPUT:" 
+    << "\n" << "\n" << exit_code << "\n" << endl;
+    
+    TokenOutput();
     AnalyzeTokens(tokens);
 
     return 0;

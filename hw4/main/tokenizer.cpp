@@ -46,24 +46,38 @@ void AnalyzeTokens(const std::vector<std::string> &tokens) {
     for (int i = 0; i < tokens.size(); i++) {
         std::string searchToken = tokens[i];
         if (std::isdigit(searchToken.at(0)) != 0) {
-            cout << "[ integer ] " << endl;
+            cout << "[integer] " << endl;
         }
         else if (std::isdigit(searchToken.at(0)) != 0 || 
         std::isalpha(searchToken.at(0)) != 0) {
-            cout << "[ identifer ] " << endl;
+            cout << "[identifer] " << endl;
         }
         else if (searchToken == "\"") {
-            cout << "[ string ] " << endl;
+            cout << "[string] " << endl;
         }
         else if (std::isspace(searchToken.at(0))) {
-            cout << "[ whitespace ] " << endl;
+            cout << "[whitespace] " << endl;
         }
         else if (searchToken == "+" || searchToken == "-" || searchToken == "*" || 
         searchToken == "/" || searchToken == "=" || searchToken == "%") {
-            cout << "[ special_character ] " << endl;
+            cout << "[special_character] " << endl;
         }
         else {
-            cout << "[ unknown ] " << endl;
+            cout << "[unknown] " << endl;
         }
     }
+}
+
+// Function for testing tokens and printing output.
+void TokenOutput() {
+    std::string integer_token = "[integer]";
+    std::string identifer_token = "[identifer]";
+    std::string string_token = "[string]";
+    std::string whitespace_token = "[whitespace]";
+    std::string special_character_token = "[special_character]";
+    std::string unknown_token = "[unknown]";
+
+    cout << integer_token << "\n" << identifer_token << "\n" 
+    << string_token << "\n" << whitespace_token << "\n"
+    << special_character_token << "\n" << unknown_token << endl;
 }

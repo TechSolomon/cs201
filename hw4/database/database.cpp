@@ -20,9 +20,10 @@ std::map<std::string, MyDatabaseRecord> theDatabase;
 
 
 // Creates a new record within the database with a corresponding key value.
-bool CreateRecord(const std::string &key) {
-
-}
+// bool CreateRecord(const std::string &key) {
+//     auto it = theDatabase.find(key);
+//     return true;
+// }
 
 // ReadRecord(key, record) copies the information from the database to
 // a user supplied record
@@ -52,16 +53,19 @@ bool UpdateRecord(const std::string &key, const MyDatabaseRecord &record) {
 }
 
 // Deletes a record from the database given a key.
-bool DeleteRecord(const std::string &key) {
-
-}
+// bool DeleteRecord(const std::string &key) {
+//     auto it = theDatabase.find(key);
+// }
 
 // Inputs a record into the database given a record.
-bool InputRecord(MyDatabaseRecord &record) {
-
-}
+// bool InputRecord(MyDatabaseRecord &record) {
+//     auto it = theDatabase.find(key);
+//     return true;
+// }
 
 // Prints a record from the database given a key.
-bool PrintRecord(const std::string &key) {
-    cout << "Key" << endl;
-}
+// bool PrintRecord(const std::string &key) {
+//     auto it = theDatabase.find(key);
+//     cout << "Key: " << endl;
+//     return true;
+// }

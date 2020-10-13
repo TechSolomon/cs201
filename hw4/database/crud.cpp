@@ -17,10 +17,10 @@ using std::string;
 using std::vector;
 
 int main() {
-    std::string key;
-    std::string value;
+    std::string key = "1";
+    std::string value = "10";
 
-    cout << "KEY: " << endl;
-    cout << "VALUE: " << endl;
-    cout << "KEY/VALUE PAIR STATUS: " << endl;
+    cout << "KEY: " << key << endl;
+    cout << "VALUE: " << value << endl;
+    cout << "KEY/VALUE PAIR STATUS: " << key << value << endl;
 }

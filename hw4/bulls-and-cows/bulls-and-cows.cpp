@@ -17,6 +17,14 @@ using std::vector;
 void randomNumber() { 
     int random_number = 1357;
     cout << "Random integer: " << random_number << endl;
+    
+    std::vector<int> createNumberVector { 1, 3, 5, 7 };
+    
+    for (int& v : createNumberVector) {
+        std::cout << v << "";
+    }
+
+    cout << endl;
 }
 
 void guessingGame() {

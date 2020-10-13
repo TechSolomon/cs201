@@ -1,4 +1,4 @@
-// database.cpp
+// database.hpp
 // Solomon Himelbloom
 // 9 October 2020
 // Database [header file] example for CS 201.
@@ -9,13 +9,15 @@
 #include <string>
 #include <map>
 struct MyDatabaseRecord {
-    // TODO: replace this with information related to your database.
-    
+    // Replace this with information related to your database.
     // std::string objectName{"obj"};
     // std::string materialName{"mtl"};
     // std::string diffuseColor{"diff"};
     // std::string specularColor{"spec"};
     // bool twoSided{false};
+    
+    std::string key;
+    std::string value;
 };
 
 bool CreateRecord(const std::string &key);

@@ -17,5 +17,10 @@ using std::string;
 using std::vector;
 
 int main() {
-    cout << "Hello, database/crud." << endl;
+    std::string key;
+    std::string value;
+
+    cout << "KEY: " << endl;
+    cout << "VALUE: " << endl;
+    cout << "KEY/VALUE PAIR STATUS: " << endl;
 }

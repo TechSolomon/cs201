@@ -11,17 +11,16 @@
 // Look-up by Key
 
 #include <iostream>
+using std::cin;
 using std::cout;
 using std::endl;
-using std::cin;
 #include <vector>
 using std::vector;
 #include <string>
-using std::string;
 using std::getline;
+using std::string;
 #include <sstream>
 using std::istringstream;
-
 
 // sequentialSearch
 // Given a vector<int> holding keys, and a vector<string> holding the
@@ -30,14 +29,20 @@ using std::istringstream;
 // returns false. If it is found, sets thevalue to the associated value
 // and returns true.
 bool sequentialSearch(vector<int> keys,
-                  vector<string> values,
-                  int thekey,
-                  string & thevalue)
+                      vector<string> values,
+                      int thekey,
+                      string &thevalue)
 {
-    return false;  // DUMMY
-    // TODO: Write this!
+    for (int i = 0; i < keys.size(); i++)
+    {
+        if (thekey == keys[i])
+        {
+            thevalue = values[i];
+            return true;
+        }
+    }
+    return false;
 }
-
 
 // Main program
 // Create a dataset, and do searches in it.

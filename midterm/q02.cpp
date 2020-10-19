@@ -1,4 +1,4 @@
-// midterm.cpp
+// q02.cpp
 // Solomon Himelbloom
 // 18 October 2020
 // CS 201 Midterm Exam

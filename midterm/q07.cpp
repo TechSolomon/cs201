@@ -21,7 +21,7 @@ void print_range(int lower, int higher) {
 
     cout << "\n" << endl;
     cout << "lower bound (excluded) = " << lower << endl;
-    cout << "higher (excluded)= " << higher << endl;
+    cout << "higher (excluded) = " << higher << endl;
 }
 
 // Question #7: Write a C++ function print_range that takes two integers 

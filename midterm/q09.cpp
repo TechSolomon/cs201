@@ -1,7 +1,7 @@
 // midterm.cpp
 // Solomon Himelbloom
 // 18 October 2020
-// CS 201 – Midterm Exam
+// CS 201 Midterm Exam
 
 #include <iostream>
 #include <stdio.h>
@@ -22,7 +22,7 @@ void PrintSubStrings(std::string input, int permutations) {
     }
 }
 
-// Question #9: 9.	Write a C++ function PrintSubStrings that take a string 
+// Question #9: Write a C++ function PrintSubStrings that take a string 
 // and prints all substrings in that string. 
 // E.g. PrintSubStrings(“abc”) would output a b c ab bc abc.
 int main() {

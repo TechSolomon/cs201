@@ -1,7 +1,7 @@
 // midterm.cpp
 // Solomon Himelbloom
 // 18 October 2020
-// CS 201 – Midterm Exam
+// CS 201 Midterm Exam
 
 #include <iostream>
 #include <stdio.h>

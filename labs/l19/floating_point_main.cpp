@@ -1,12 +1,7 @@
-// floating_point_main.cpp
-// Solomon Himelbloom
-// 19 October 2020
-// Floating point example for CS 201.
-
 /**
- * @file     L19_Floating_Point.cpp
+ * @file     floating_point_main.cpp
  * @author   Solomon Himelbloom
- * @version  Jan 28, 2019
+ * @version  Oct 26, 2020
  * John Quan 
  *
  * Useful trigonometric functions.
@@ -16,18 +11,17 @@
 #include <vector>
 // using sin, cos
 #include <cmath>
-#include <cstdlib>
 
 #include "floating_point.hpp"
 
-using std::size_t
+using std::size_t;
 
 int main() {
 	// TODO Turn on "error on warnings" so this doesn't*****************
 	// compile.  Make it compile by using std::size_t
 	// You can comment this for loop out after that.
 	std::vector<int> v { 1, 2, 3, 4, 5 };
-	for (size_t int i = 2; i < v.size(); ++i) {
+	for (int i = 2; i < v.size(); ++i) {
 		++v[i];
 		std::cout << v[i] << std::endl;
 	}
@@ -38,9 +32,25 @@ int main() {
 	//        degreesToRadians(360).
 	//      Print degree,cos(radian),sin(radian) as a comma separated
 	//        values (CSV) list.
-	degreesToRadians(360);
+
+	std::vector<double> radians = degreesToRadians(360);
+	std::cout << "degrees,cos,sin" << std::endl;
+
+	for (std::size_t i = 0; i < radians.size(); i++) {
+		std::cout << i << "," << cos(radians[i]) << "," << sin(radians[i]) << std::endl;
+	}
 
 	// *****************************************************************
+
+	if (1./3*3 != 1) {
+		std::cout << "WRONG! Please try again as the check has failed.";
+	} 
+	
+	else {
+		std::cout << "The above answer(s) are right.";
+	}
+
+	std::cout << std::endl;
 
 	return 0;
 }

@@ -1,12 +1,7 @@
-// floating_point.hpp
-// Solomon Himelbloom
-// 19 October 2020
-// Floating point example [header file] for CS 201.
-
 /**
  * @file     floating_point.hpp
  * @author   Solomon Himelbloom
- * @version  Mar 1, 2019
+ * @version  Oct 26, 2020
  * John Quan 
  *
  * Useful trigonometric functions.

@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 3.17)
 project(fltk_demo)
 
 set(CMAKE_CXX_STANDARD 14)
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES fltk-demo.cpp)
 
-add_executable(fltk_demo main.cpp)
+add_executable(fltk_demo fltk-demo.cpp)
 set(FLTK_SKIP_FLUID true)
 find_package(FLTK REQUIRED)
 include_directories(${FLTK_INCLUDE_DIR})

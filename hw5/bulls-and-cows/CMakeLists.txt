@@ -3,4 +3,4 @@ project(bulls_and_cows)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(bulls_and_cows main.cpp)
+add_executable(bulls_and_cows bulls-and-cows.cpp)

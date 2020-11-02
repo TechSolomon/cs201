@@ -3,4 +3,4 @@ project(crud)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(crud main.cpp)
+add_executable(crud database.cpp database.hpp crud.cpp)

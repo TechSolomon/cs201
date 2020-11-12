@@ -31,8 +31,19 @@ int RandomBetween(int first, int last) {
 }
 
 // Prints a list of the random numbers clearly showing they are normally or uniformly distributed.
-void PrintDistribution(const std::map<int, int> &numbers) {
-    std::cout << "Print Distribution" << endl;
+void PrintDistribution() {
+    std::cout << "Printed Distribution (Testing Key + Value Pairs): " << endl;
+    map<string, int> test_map;
+    test_map["Fairbanks"] = 99775;
+    test_map["Alaska"] = 907;
+    test_map["United States"] = 50;
+
+    for (const auto & printer_dist : test_map) {
+        auto test_map_key = printer_dist.first; // Key
+        auto test_map_value = printer_dist.second; // Associated Value
+        cout << "Key: " << test_map_key << " | Value: " << test_map_value;
+        cout << endl;
+    }
 }
 
 int main() {
@@ -54,19 +65,20 @@ int main() {
     for (int n = 0; n < 10000; ++n) {
         ++hist[std::round(normal_dist(e2))];
     }
+    
     std::cout << "Normal distribution around " << mean << ":\n";
     for (auto p : hist) {
         std::cout << std::fixed << std::setprecision(1) << std::setw(2)
         << p.first << ' ' << std::string(p.second/200, '*') << 'n';
     }
 
-    int a, b, c;
-    a = RandomBetweenU(1, 2);
-    b = RandomBetweenU(3, 4);
-    c = RandomBetween(5, 6);
+    int first, second, third;
+    first = RandomBetweenU(1, 2);
+    second = RandomBetweenU(3, 4);
+    third = RandomBetween(5, 6);
     std::cout << "\n" << endl;
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-    std::cout << c << std::endl;
-    // PrintDistribution();
+    std::cout << first << std::endl;
+    std::cout << second << std::endl;
+    std::cout << third << std::endl;
+    PrintDistribution();
 }

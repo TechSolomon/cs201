@@ -25,7 +25,7 @@ int RandomBetweenN(int first, int last) {
     return 0;
 }
 
-// Returns numbers using the rand() functionn from the C stanndard library <stdlib.h>.
+// Returns numbers using the rand() function from the C standard library <stdlib.h>.
 int RandomBetween(int first, int last) {
     return 0;
 }
@@ -47,16 +47,16 @@ void PrintDistribution() {
 }
 
 int main() {
-    // Seed with a real random value, if available
+    // Seed with a real random value, if available.
     std::random_device r;
 
-    // Choose a random mean between 1 and 6
+    // Choose a random mean between 1 and 6.
     std::default_random_engine e1(r());
     std::uniform_int_distribution<int> uniform_dist(1, 6);
     int mean = uniform_dist(e1);
     std::cout << "Randomly-chosen mean: " << mean << '\n';
 
-    // Generate a normal distribution around that mean
+    // Generate a normal distribution around that mean.
     std::seed_seq seed2{r(), r(), r(), r(), r(), r(), r(), r()};
     std::mt19937 e2(seed2);
     std::normal_distribution<> normal_dist(mean, 2);
@@ -69,7 +69,7 @@ int main() {
     std::cout << "Normal distribution around " << mean << ":\n";
     for (auto p : hist) {
         std::cout << std::fixed << std::setprecision(1) << std::setw(2)
-        << p.first << ' ' << std::string(p.second/200, '*') << 'n';
+                  << p.first << ' ' << std::string(p.second/200, '*') << 'n';
     }
 
     int first, second, third;
@@ -80,5 +80,6 @@ int main() {
     std::cout << first << std::endl;
     std::cout << second << std::endl;
     std::cout << third << std::endl;
+    std::cout << "" << endl;
     PrintDistribution();
 }

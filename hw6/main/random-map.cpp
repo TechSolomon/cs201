@@ -15,6 +15,26 @@ using std::endl;
 using std::string;
 using std::map;
 
+// Returns a uniform random number between first and last, inclusively.
+int RandomBetweenU(int first, int last) {
+    return 0;
+}
+
+// Returns a normally distributed random number between first and last, inclusively.
+int RandomBetweenN(int first, int last) {
+    return 0;
+}
+
+// Returns numbers using the rand() functionn from the C stanndard library <stdlib.h>.
+int RandomBetween(int first, int last) {
+    return 0;
+}
+
+// Prints a list of the random numbers clearly showing they are normally or uniformly distributed.
+void PrintDistribution(const std::map<int, int> &numbers) {
+    std::cout << "Print Distribution" << endl;
+}
+
 int main() {
     // Seed with a real random value, if available
     std::random_device r;
@@ -40,4 +60,13 @@ int main() {
         << p.first << ' ' << std::string(p.second/200, '*') << 'n';
     }
 
+    int a, b, c;
+    a = RandomBetweenU(1, 2);
+    b = RandomBetweenU(3, 4);
+    c = RandomBetween(5, 6);
+    std::cout << "\n" << endl;
+    std::cout << a << std::endl;
+    std::cout << b << std::endl;
+    std::cout << c << std::endl;
+    // PrintDistribution();
 }

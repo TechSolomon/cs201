@@ -9,6 +9,7 @@
 #include <map>
 #include <vector>
 #include <algorithm>
+#include <random>
 using std::cin;
 using std::cout;
 using std::endl;
@@ -16,39 +17,35 @@ using std::string;
 using std::map;
 using std::sort;
 using std::reverse;
-
-void printVector(std::vector<int> const &vv) {
-    for (int i = 0; i < vv.size(); i++) {
-        std:: cout << vv.at(i) << " ";
-    }
-}
+using std::mt19937;
+using std::random_device;
+using std::uniform_int_distribution;
 
 int main() {
-    std::vector<int> vv1{-822, 576, 26, -747, 493, 210, 512, -925, -39, 611};
-    std::vector<int> vv2{-925, -822, -747, -512, -39, 26, 210, 493, 576, 611};
-    std::vector<int> vv3{-822, 576, 26, -747, 493, 210, 512, -925, -39, 611};
-    std::vector<int> vv4{611, 576, 512, 493, 210, 26, -39, -747, -822, -925};
+    int heads_total = 0;
+    int tails_total = 0;
+    int total_flips = 0;
 
-    std::cout << "Pseudorandom numbers." << std::endl;
+    std::cout << "How many times would you like to flip the coin? ";
+    std::cin >> total_flips;
 
-    // cout << "vector #1: ";
-    // printVector(vv1);
-    // cout << "\nvector #2: ";
-    // printVector(vv2);
-    // cout << "\nvector #3: ";
-    // printVector(vv3);
-    // cout << "\nvector #4: ";
-    // printVector(vv4);
-    // cout << "" << endl;
+    random_device rd;
+    mt19937 gen(rd()); // PRNG; unpredictable seed.
 
-    // cout << "\ncompare (vv1 <-> vv2): ";
-    // auto first_checksum = std::mismatch(vv1.begin(), vv1.end(), vv2.begin());
+    uniform_int_distribution<int> coinDistrib(0, 1); // 0 = Heads; 1 = Tails
+    
+    for (int i = 0; i < total_flips; ++i) {
+        if (coinDistrib(gen) == 0) {
+            heads_total++;
+        }
 
-    // if (*first_checksum.first == *first_checksum.second) {
-    //     std::cout << "No mismatch found (same values).";
-    // } 
-    // else {
-    //     std::cout << "Mismatch found (different values): ";
-    //     std::cout << *first_checksum.first << " & " << *first_checksum.second << std::endl;
-    // }
+        else {
+            tails_total++;
+        }
+    }
+
+    std::cout << "\n";
+    std::cout << "Heads Total: " << heads_total << std::endl;
+    std::cout << "Tails Total: " << tails_total << std::endl;
+    std::cout << "Flips Total: " << total_flips << std::endl;
 }

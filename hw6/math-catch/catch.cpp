@@ -25,4 +25,11 @@ TEST_CASE ( "STL Unit Testing: sin(x)", "[sine function]" ) {
     REQUIRE(round(sin(M_PI/6)) == 1/2);
     REQUIRE(round(sin(0)) == 0);
 }
+
+TEST_CASE ( "STL Unit Testing: atan2(x)", "[arc-tangant function]" ) {
+    REQUIRE(round(atan2(0, 0)) == 0);
+    REQUIRE(round(atan2(M_PI, 6)) == 0);
+    REQUIRE(round(atan2(M_PI, 2)) == 1);
+    REQUIRE(round(atan2(M_PI, 4)) == 1);
+}
            

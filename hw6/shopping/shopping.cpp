@@ -14,5 +14,10 @@ using std::string;
 using std::map;
 
 int main() {
-    std::cout << "Hello, world." << endl;
+    std::cout << "Hello, shopping." << endl;
+
+    struct Record {
+        double unitPrice;
+        int units;
+    };
 }

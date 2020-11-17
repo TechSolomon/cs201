@@ -35,29 +35,36 @@ void generateSecretWord() {
 		"foundation", "microsoft", "intel", "available", "platforms", "designed", "bias", 
 		"toward", "system", "programming", "embedded", "resource", "constrained", 
 		"software", "large", "systems", "performance", "efficiency", "flexibility", 
-		"design", "highlights", "found", "useful", "other", "contexts",
-		"strengths", "being", "software", "infrastructure", "resource", "constrained", 
-		"applications", "including", "desktop", "applications", "servers", "commerce", 
-		"search", "servers", "performance", "critical", "applications", "telephone", 
-		"switches", "space", "probes", "standardized", "international", "organization", 
-		"standardization", "latest", "standard", "version", "ratified", "published",
-		"informally", "known", "programming", "language", "initially", "standardized", 
-		"which", "then", "amended", "standards", "current",  "standard", "supersedes", 
-		"these", "new", "features", "and", "enlarged", "standard", "library", "before", 
-		"initial", "standardization", "developed", "Danish", "computer", "scientist", 
-		"bell", "labs", "since", "extension", "language;", "wanted", "efficient", 
-		"flexible", "language", "similar", "provided", "high", "level", "features", 
-		"program", "organization", "next", "planned", "standard", "keeping", "with", 
-		"current", "trend", "new", "version", "every", "three", "years" };
+		"design", "highlights", "found", "useful", "other", "contexts", "strengths", 
+		"being", "software", "infrastructure", "resource", "constrained", "applications", 
+		"including", "desktop", "applications", "servers", "commerce", "search", "servers", 
+		"performance", "critical", "applications", "telephone", "switches", "space", 
+		"probes", "standardized", "international", "organization",  "standardization", 
+		"latest", "standard", "version", "ratified", "published", "informally", "known", 
+		"programming", "language", "initially", "standardized", "which", "then", "amended", 
+		"standards", "current",  "standard", "supersedes", "these", "new", "features", 
+		"enlarged", "standard", "library", "before", "initial", "standardization", 
+		"developed", "computer", "scientist", "bell", "labs", "since", "extension", 
+		"language", "wanted", "efficient", "flexible", "language", "similar", "provided", 
+		"high", "level", "features", "program", "organization", "next", "planned", 
+		"standard", "keeping", "current", "trend", "version", "every", "three", "years" };
+
+		string sample_random_word = "computer";
+		// cout << sample_word << endl;
 }
 
 void hangmanUserInput() {
-    std::cout << "\nGuess a letter!" << endl;
-    std::cout << "\nRemaining: a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z" << endl;
-    std::cout << "" << endl;
+	string guess = "";
+	string letters = "abcdefghijklmnopqrstuvwxyz";
+    std::cout << "\nGuess a letter: ";
+	cin >> guess;
+	// letters.erase(remove(letters.begin(), letters.end(), guess), letters.end());
+    std::cout << "\nRemaining: " << letters << endl;
 }
 
 void hangmanASCIIart() {
+	int totalGuessCount = 0;
+	
     std::cout << " _________     " << std::endl;
     std::cout << "|         |    " << std::endl;
     std::cout << "|         0    " << std::endl;
@@ -73,5 +80,5 @@ int main() {
 	startHangmanGame();
 	generateSecretWord();
 	hangmanUserInput();
-    hangmanASCIIart();
+	hangmanASCIIart();
 }

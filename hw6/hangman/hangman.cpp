@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
+#include <random>
 #include <map>
 using std::cin;
 using std::cout;
@@ -14,6 +15,9 @@ using std::endl;
 using std::string;
 using std::vector;
 using std::map;
+using std::mt19937;
+using std::random_device;
+using std::uniform_int_distribution;
 
 void startHangmanGame() {
     std::cout << "\nStarting hangman game... " << endl;
@@ -21,6 +25,19 @@ void startHangmanGame() {
 
 void generateSecretWord() {
     std::cout << "Generating secret word... " << endl;
+
+	std::map<string, int> word_list = {
+		{ "developed", 1 },
+		{ "computer",  2 },
+		{ "scientist", 3 },
+		{ "since", 4 },
+		{ "language", 5 },
+		{ "wanted", 6 },
+		{ "efficient", 7 },
+		{ "language", 8 },
+		{ "similar", 9 },
+		{ "provided", 10 },
+	};
 
 	/**
      * First two paragraphs of C++ on Wikipedia.org
@@ -48,23 +65,10 @@ void generateSecretWord() {
 		"language", "wanted", "efficient", "flexible", "language", "similar", "provided", 
 		"high", "level", "features", "program", "organization", "next", "planned", 
 		"standard", "keeping", "current", "trend", "version", "every", "three", "years" };
-
-		string sample_random_word = "computer";
-		// cout << sample_word << endl;
-}
-
-void hangmanUserInput() {
-	string guess = "";
-	string letters = "abcdefghijklmnopqrstuvwxyz";
-    std::cout << "\nGuess a letter: ";
-	cin >> guess;
-	// letters.erase(remove(letters.begin(), letters.end(), guess), letters.end());
-    std::cout << "\nRemaining: " << letters << endl;
 }
 
 void hangmanASCIIart() {
 	int totalGuessCount = 0;
-	
     std::cout << " _________     " << std::endl;
     std::cout << "|         |    " << std::endl;
     std::cout << "|         0    " << std::endl;
@@ -79,6 +83,28 @@ void hangmanASCIIart() {
 int main() {
 	startHangmanGame();
 	generateSecretWord();
-	hangmanUserInput();
-	hangmanASCIIart();
+	string guess = "";
+	string letters = "abcdefghijklmnopqrstuvwxyz";
+
+	srand((unsigned) time(0));
+	int random_number = 0;
+	random_number = (rand() % 100) + 1;
+	string random_word = "computer";
+	int word_length = 8;
+
+	for (int i = 0; i < word_length; i++) {
+		std::cout << "Guess a letter: ";
+		cin >> guess;
+
+		if ((guess >= "a" && guess <= "z") || (guess >= "A" && guess <= "Z")) {
+			// hangmanASCIIart();
+		}
+
+		else {
+			std::cout << "Error: please try again with a letter.";
+			break;
+		}
+	}
+
+    // std::cout << "\nRemaining: " << letters << endl;
 }

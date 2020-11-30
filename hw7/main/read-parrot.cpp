@@ -55,31 +55,47 @@ int main() {
     int xres, yres, maxval;
     fin >> xres >> yres >> maxval;
     if (!fin) { 
-        cout << "Error reading resolution." << endl; exit(3); 
+        cout << "Error reading resolution." << endl; 
+        exit(3); 
     }
     cout << "Image Size: " << xres << "x" << yres << endl;
     cout << "Maximum Value: " << maxval << endl;
 
     // TODO: refactor red, green, and blue variables.
-    int red, green, blue;
+    int red, green, blue, y;
     int pixels2read = xres * yres;
     for (int i = 0; i < pixels2read; i++) {
-        // TODO: check status for end of file (EOF) errors.
+        // TODO: check status for end-of-file (EOF) errors.
         fin >> red >> green >> blue;
         if (!fin) {
             cout << "Error reading the pixels." << endl;
             exit(4);
         }
         // TODO: push to back of vector (6,400 pixels; each has an R,G,B value).
-        cout << "<" << red << "," << green << "," << blue << ">" << endl;
+        cout << "<" << red << "," << green << "," << blue << ">";
+        // Implement Y = 0.2126R + 0.7152G + 0.0722B
+        y = 0.2126 * red + 0.7152 * green + 0.0722 * blue;
+        cout << " -> " << y;
+        // Make sure the y-value is [0, 255].
+        if (y < 0 || y > 255) {
+            cout << "ERROR: the y-value is out of range." << endl;
+            exit(6);
+        }
+        // Map the y-value to a character.
+        const char values[] = " .-+*@0#"; 
+        // TODO: find 16 'toner' values in increasing weight.
+        int val_map = y / 32;
+        // values [0, 7] and y [0, 255]; so / by 32
+        cout << " -> " << val_map << " -> " << values[val_map] << endl;
+        // TODO: adjust val_map to 16 with additional character values.
     }
 
-    // TODO: HW7 – "Start small, finish big."
-    // finish reading – store (R,G,B) into a vector
-    // refactor: move read to a function
-    // add: create a class for PPM files
-    // convert to grayscale (R,G,B) -> Gray
-    // convert: Gray to ASCII characters
+    // TODO: finish HW7 refactor...
+    // 1. finish reading – store (R,G,B) into a vector
+    // 2. refactor: move read to a function
+    // 3. add: create a class for PPM files
+    // 4. convert to grayscale (R,G,B) -> Gray
+    // 5. convert: Gray to ASCII characters
 
-    cout << "Done: pixels2read task has been completed." << endl;
+    cout << "\nDone – the pixels2read task has been completed." << endl;
 }

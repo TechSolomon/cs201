@@ -2,6 +2,14 @@
 // Solomon Himelbloom
 // 30 November 2020
 // Class example of reading parrot.ppm file for CS 201.
+// 
+// TODO:
+// 1. finish HW7 refactor (11/30/2020)
+// 2. finish reading – store (R,G,B) into a vector
+// 3. refactor: move read to a function
+// 4. add: create a class for PPM files
+// 5. convert to grayscale (R,G,B) -> Gray
+// 6. convert: Gray to ASCII characters
 
 #include <iostream>
 #include <stdio.h>
@@ -72,10 +80,10 @@ int main() {
             exit(4);
         }
         // TODO: push to back of vector (6,400 pixels; each has an R,G,B value).
-        cout << "<" << red << "," << green << "," << blue << ">";
+        // cout << "<" << red << "," << green << "," << blue << ">";
         // Implement Y = 0.2126R + 0.7152G + 0.0722B
         y = 0.2126 * red + 0.7152 * green + 0.0722 * blue;
-        cout << " -> " << y;
+        // cout << " -> " << y;
         // Make sure the y-value is [0, 255].
         if (y < 0 || y > 255) {
             cout << "ERROR: the y-value is out of range." << endl;
@@ -86,16 +94,14 @@ int main() {
         // TODO: find 16 'toner' values in increasing weight.
         int val_map = y / 32;
         // values [0, 7] and y [0, 255]; so / by 32
-        cout << " -> " << val_map << " -> " << values[val_map] << endl;
+        // cout << " -> " << val_map << " -> " << values[val_map] << endl;
         // TODO: adjust val_map to 16 with additional character values.
-    }
 
-    // TODO: finish HW7 refactor...
-    // 1. finish reading – store (R,G,B) into a vector
-    // 2. refactor: move read to a function
-    // 3. add: create a class for PPM files
-    // 4. convert to grayscale (R,G,B) -> Gray
-    // 5. convert: Gray to ASCII characters
+        cout << values[val_map];
+        if (i % 80 == 79) {
+            cout << endl;
+        }
+    }
 
     cout << "\nDone – the pixels2read task has been completed." << endl;
 }

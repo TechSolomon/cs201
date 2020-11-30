@@ -13,11 +13,46 @@ using std::endl;
 using std::string;
 using std::map;
 
+// Class Load Portable Pixmap Format (PPM) Images
+class LoadPPMImages {
+
+public:
+// ***** LoadPPMImages class: constructors *****
+
+    // TODO: Put something here!
+
+// ***** LoadPPMImages: general public member functions *****
+
+    void print() const
+    {
+        cout << "SOMETHING NEEDS TO GO HERE";  // DUMMY
+        // TODO: Write this!
+    }
+
+// ***** LoadPPMImages: data members *****
+private:
+
+    int _hr;   // Hours past midnight
+    int _min;  // Minutes past the hour
+    int _sec;  // Seconds past the minute
+
+};  // End class LoadPPMImages
+
 int main() {
-    std::cout << "Hello, ASCII art." << endl;
-    std::cout << "\nLoading Supporting Files..." << endl;
-    std::cout << "Color3.cpp / Color3.hpp" << endl;
-    std::cout << "Image3.cpp / Image3.hpp" << endl;
-    std::cout << "parrot.ppm" << endl;
-    std::cout << "\nStatus: ASCII art generation complete!" << endl;
+    // Print header
+    cout << "Here are some images:" << endl;
+    cout << endl;
+
+    // Make an Image object; print it
+    LoadPPMImages i1;
+    cout << "Image #1: [";
+    i1.print();
+    cout << "]" << endl;
+    cout << endl;
+
+    // Wait for user
+    cout << "PRESS ENTER to quit ";
+    while (cin.get() != '\n');
 }
+
+

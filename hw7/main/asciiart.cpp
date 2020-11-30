@@ -10,33 +10,31 @@
 using std::cin;
 using std::cout;
 using std::endl;
-using std::string;
 using std::map;
+using std::string;
 
 // Class Load Portable Pixmap Format (PPM) Images
 class LoadPPMImages {
 
 public:
-// ***** LoadPPMImages class: constructors *****
+    // ***** LoadPPMImages class: constructors *****
 
     // TODO: Put something here!
 
-// ***** LoadPPMImages: general public member functions *****
+    // ***** LoadPPMImages: general public member functions *****
 
-    void print() const
-    {
-        cout << "SOMETHING NEEDS TO GO HERE";  // DUMMY
+    void print() const {
+        cout << "SOMETHING NEEDS TO GO HERE"; // DUMMY
         // TODO: Write this!
     }
 
-// ***** LoadPPMImages: data members *****
+    // ***** LoadPPMImages: data members *****
 private:
+    int _hr;  // Hours past midnight
+    int _min; // Minutes past the hour
+    int _sec; // Seconds past the minute
 
-    int _hr;   // Hours past midnight
-    int _min;  // Minutes past the hour
-    int _sec;  // Seconds past the minute
-
-};  // End class LoadPPMImages
+}; // End class LoadPPMImages
 
 int main() {
     // Print header
@@ -54,5 +52,3 @@ int main() {
     cout << "PRESS ENTER to quit ";
     while (cin.get() != '\n');
 }
-
-

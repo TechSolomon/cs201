@@ -1,4 +1,5 @@
 // Color3.cpp
+// Solomon Himelbloom
 // Implementation for Color3 class
 // Original Author: Jonathan Metzgar
 // CS 201 course

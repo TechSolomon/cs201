@@ -1,4 +1,5 @@
 // Image3.hpp
+// Solomon Himelbloom
 // Interface for Image3 class
 // Original Author: Jonathan Metzgar
 // CS 201 course

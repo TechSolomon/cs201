@@ -24,13 +24,16 @@ const int ONION = 8;
 const int MAYO = 16;
 const int MUSTARD = 32;
 
+// Bitwise-AND/OR allow passing multiple flags into a signle int.
+const int BEAR = 64;
+const int SALMON = 128;
+const int MOSQUITO = 256;
 
 // sandwich
 // Given int "toppings", with bits having meanings as above, print all
 // sandwich toppings specified, on a single line, or "(none)" if none
 // specified.
-void sandwich(int toppings)
-{
+void sandwich(int toppings) {
     cout << "Toppings:";
 
     if ((toppings & LETTUCE) != 0)
@@ -52,26 +55,43 @@ void sandwich(int toppings)
     cout << endl;
 }
 
+// animals, or "(none)" if none specified.
+void i_like(int anims) {
+    cout << "Animals I like:";
+
+    if (anims & BEAR)      cout << " bears";
+    if (anims & SALMON)    cout << " salmon";
+    if (anims & MOSQUITO)  cout << " mosquitoes";
+
+    if (anims == 0)
+        cout << " (none)";
+
+    cout << endl;
+}
 
 // Main Program
-// Call function "sandwich" to specify sandwiches with various
-// combinations of toppings.
-int main()
-{
+// Call function "sandwich" to specify 
+// sandwiches with various combinations of toppings.
+// Call function "i_like" to specficy 
+// animals with various combinations.
+int main() {
     cout << "Sandwich #1" << endl;
-    sandwich(LETTUCE | ONION);
+    sandwich(LETTUCE & ONION);
     cout << endl;
 
     cout << "Sandwich #2" << endl;
-    sandwich(TOMATO | ONION | MAYO);
+    sandwich(TOMATO | ONION & MAYO);
     cout << endl;
 
     cout << "Sandwich #3 - all toppings" << endl;
-    sandwich(LETTUCE | TOMATO | PICKLE | ONION | MAYO | MUSTARD);
+    sandwich(LETTUCE & TOMATO ^ PICKLE | ONION | MAYO & MUSTARD);
     cout << endl;
 
     cout << "Sandwich #4 - no toppings" << endl;
     sandwich(0);
+    cout << endl;
+
+    i_like(BEAR | SALMON);
     cout << endl;
 
     // Wait for user

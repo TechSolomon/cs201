@@ -5,10 +5,10 @@
 // 
 // TODO:
 // 1. finish HW7 refactor (11/30/2020)
-// 2. finish reading – store (R,G,B) into a vector
+// 2. finish reading – store (RGB) into a vector
 // 3. refactor: move read to a function
 // 4. add: create a class for PPM files
-// 5. convert to grayscale (R,G,B) -> Gray
+// 5. convert to grayscale (RGB) -> Gray
 // 6. convert: Gray to ASCII characters
 
 #include <iostream>
@@ -33,14 +33,13 @@ using std::string;
 // 1
 
 int main() {
-    // TODO: change parrot.ppm -> string (DRY programming).
-    // const string file_name = "parrot.ppm";
-    ifstream fin("parrot.ppm");
+    const string file_name = "parrot.ppm";
+    ifstream fin(file_name);
     if (!fin) {
-        cout << "Error opneing parrot.ppm" << endl;
+        cout << "Error opening " << file_name << endl;
         exit(1);
     }
-    cout << "Opened parrot.ppm" << endl;
+    cout << "Opened " << file_name << endl;
 
     // Read and verify the magic number.
     string line;
@@ -69,12 +68,11 @@ int main() {
     cout << "Image Size: " << xres << "x" << yres << endl;
     cout << "Maximum Value: " << maxval << endl;
 
-    // TODO: refactor red, green, and blue variables.
-    int red, green, blue, y;
+    int r, g, b, y;
     int pixels2read = xres * yres;
     for (int i = 0; i < pixels2read; i++) {
         // TODO: check status for end-of-file (EOF) errors.
-        fin >> red >> green >> blue;
+        fin >> r >> g >> b;
         if (!fin) {
             cout << "Error reading the pixels." << endl;
             exit(4);
@@ -82,7 +80,7 @@ int main() {
         // TODO: push to back of vector (6,400 pixels; each has an R,G,B value).
         // cout << "<" << red << "," << green << "," << blue << ">";
         // Implement Y = 0.2126R + 0.7152G + 0.0722B
-        y = 0.2126 * red + 0.7152 * green + 0.0722 * blue;
+        y = 0.2126 * r + 0.7152 * g + 0.0722 * b;
         // cout << " -> " << y;
         // Make sure the y-value is [0, 255].
         if (y < 0 || y > 255) {
@@ -90,10 +88,10 @@ int main() {
             exit(6);
         }
         // Map the y-value to a character.
-        const char values[] = " .-+*@0#"; 
+        const char values[] = " .,-+*!&@BOQ0#MW"; 
         // TODO: find 16 'toner' values in increasing weight.
-        int val_map = y / 32;
-        // values [0, 7] and y [0, 255]; so / by 32
+        int val_map = y / 16;
+        // values [0, 15] and y [0, 255]; so / by 16
         // cout << " -> " << val_map << " -> " << values[val_map] << endl;
         // TODO: adjust val_map to 16 with additional character values.
 
@@ -103,5 +101,5 @@ int main() {
         }
     }
 
-    cout << "\nDone – the pixels2read task has been completed." << endl;
+    cout << "\nDone: the pixels2read task has been completed." << endl;
 }

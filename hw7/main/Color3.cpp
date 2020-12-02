@@ -6,6 +6,17 @@
 #include <iomanip>
 #include "Color3.hpp"
 
+#include <iostream>
+#include <stdio.h>
+#include <string>
+#include <map>
+#include <fstream>
+using std::cin;
+using std::cout;
+using std::endl;
+using std::ifstream;
+using std::map;
+using std::string;
 using std::setw;
 
 // Ensure values are in the range 0 to maxvalue
@@ -24,8 +35,14 @@ Color3::Color3(int R, int G, int B) {
 }
 
 int Color3::weightedSum() const {
+	int r, g, b, y;
 	// Implement Y = 0.2126R + 0.7152G + 0.0722B
+	y = 0.2126 * r + 0.7152 * g + 0.0722 * b;
 	// Ensure values are inside the range 0 to 255
+	if (y < 0 || y > 255) {
+            cout << "ERROR: the y-value is out of range." << endl;
+            exit(6);
+        }
 	return 0;
 }
 
@@ -33,7 +50,7 @@ char Color3::asciiValue() const {
 	// Use at least 16 characters, sort these from dark to light
 	// or light to dark and then map the weightedSum() to the range
 	// 0 to 15. Please pick your own characters
-	const char values[] = "ABCDEFGHIJKLMNOP";
+	const char values[] = " .,-+*!&@BOQ0#MW";
 	unsigned darkness = 0;
 	return values[darkness];
 }

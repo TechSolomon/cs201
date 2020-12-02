@@ -2,10 +2,6 @@
 // Solomon Himelbloom
 // 28 November 2020
 // ASCII art example for CS 201.
-// 
-// finish reading – store (RGB) into a vector
-// refactor: move read to a function
-// add: create a class for PPM files
 
 #include <iostream>
 #include <stdio.h>

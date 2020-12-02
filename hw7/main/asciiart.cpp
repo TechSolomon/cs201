@@ -28,30 +28,8 @@ using std::string;
 // 0
 // 1
 
-// Class Load Portable Pixmap Format (PPM) Images
-class LoadPPMImages {
-
-public:
-    // ***** LoadPPMImages class: constructors *****
-
-    // TODO: Put something here!
-
-    // ***** LoadPPMImages: general public member functions *****
-
-    void print() const {
-        cout << "SOMETHING NEEDS TO GO HERE"; // DUMMY
-        // TODO: Write this!
-    }
-
-    // ***** LoadPPMImages: data members *****
-private:
-    int _hr;  // Hours past midnight
-    int _min; // Minutes past the hour
-    int _sec; // Seconds past the minute
-
-}; // End class LoadPPMImages
-
-int main() {
+// Input and output from the attached Portable Pixmap Format (PPM) image.
+void readPPM() {
     const string file_name = "parrot.ppm";
     ifstream fin(file_name);
     if (!fin) {
@@ -71,10 +49,10 @@ int main() {
         exit(2);
     }
 
-    // Quick and dirty – process the comment.
+    // Process the comment.
     getline(fin, line);
     if (line[0]=='#') {
-        cout << "Currently ignoring the comment." << endl;
+        cout << "Currently ignoring the PPM file comment." << endl;
     }
 
     // Input (and print) the x + y image size and maximum value.
@@ -96,7 +74,7 @@ int main() {
             cout << "Error reading the pixels." << endl;
             exit(4);
         }
-        // TODO: push to back of vector (6,400 pixels; each has an R,G,B value).
+        // Push to back of vector (6,400 pixels; each has an R,G,B value).
         y = 0.2126 * r + 0.7152 * g + 0.0722 * b;
         // Make sure the y-value is [0, 255].
         if (y < 0 || y > 255) {
@@ -112,23 +90,47 @@ int main() {
             cout << endl;
         }
     }
-
-    cout << "\nDone: the pixels2read task has been completed." << endl;
 }
 
-// int main() {
-//     // Print header
-//     cout << "Here are some images:" << endl;
-//     cout << endl;
+// Class Load Portable Pixmap Format (PPM) Images
+class LoadPPMImages {
 
-//     // Make an Image object; print it
-//     LoadPPMImages i1;
-//     cout << "Image #1: [";
-//     i1.print();
-//     cout << "]" << endl;
-//     cout << endl;
+public:
+    // ***** LoadPPMImages class: constructors *****
+    const string file_name = "parrot.ppm";
+    // ***** LoadPPMImages: general public member functions *****
 
-//     // Wait for user
-//     cout << "PRESS ENTER to quit ";
-//     while (cin.get() != '\n');
-// }
+    void printPPM() const {
+        cout << file_name << " image";
+    }
+
+    // ***** LoadPPMImages: data members *****
+private:
+    // 2D image dimensions:
+    int _length;  // PPM total length (L -> Y)
+    int _width; // PPM total width (W -> X)
+    int _height; // PPM total height (H -> Y)
+
+}; // End class LoadPPMImages
+
+
+int main() {
+    // Print header.
+    cout << "Here are some images:" << endl;
+    cout << endl;
+
+    // Make an image object and print it.
+    int i = 1;
+    LoadPPMImages i1;
+    cout << "Image #" << i << ": [";
+    i1.printPPM();
+    cout << "]" << endl;
+    cout << endl;
+
+    readPPM();
+    cout << "\nDone: the pixels2read task has been completed." << endl;
+
+    // Wait for user
+    cout << "\nPRESS ENTER to quit ";
+    while (cin.get() != '\n');
+}

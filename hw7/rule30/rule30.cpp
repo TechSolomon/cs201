@@ -13,6 +13,10 @@ using std::endl;
 using std::string;
 using std::map;
 
+/*
+    Rule 30 Formula: New = Left XOR (Center OR Right)
+*/
+
 int main() {
     std::cout << "Hello, rule #30." << endl;
 }

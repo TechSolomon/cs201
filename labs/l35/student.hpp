@@ -9,8 +9,26 @@
 #ifndef STUDENT_HPP_
 #define STUDENT_HPP_
 
+#include <iostream>
+#include <string>
 #include <vector>
+using std::cin;
+using std::cout;
+using std::endl;
+using std::string;
 
-std::vector<double> degreesToRadians(int degree);
+class Student {
+public:
+    // Example Constructors:
+    Student();
+    Student(string legalName);
+    Student(string legalName, int UAID);
+    void printInfo() const;
+
+private:
+    string _legalName;
+    int _UAID;
+
+};
 
 #endif /* STUDENT_HPP_ */

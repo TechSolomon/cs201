@@ -29,27 +29,27 @@ using std::cin;
 // Create some Student objects and call their printInfo function.
 int main() {
 	// Create student objects
-	// const Student s1;  // unknown student
-	// const Student s2("Iggy Abadaba");  // Name; id chosen automatically
-	// const Student s3("Frederica Figwig", 1234);      // Name & id
-	// const Student s4("Clifford Clumbergump", 2345);  // Name & id
+	const Student s1;  // unknown student
+	const Student s2("Iggy Abadaba");  // Name; id chosen automatically
+	const Student s3("Frederica Figwig", 1234);      // Name & id
+	const Student s4("Clifford Clumbergump", 2345);  // Name & id
 
 	// Print info
 	cout << "Info on first student:" << endl;
-	// s1.printInfo();
+	s1.printInfo();
 	cout << endl << endl;
 
 	// Print info
 	cout << "Info on second student:" << endl;
-	// s2.printInfo();
+	s2.printInfo();
 	cout << endl << endl;
 
 	cout << "Info on third student:" << endl;
-	// s3.printInfo();
+	s3.printInfo();
 	cout << endl << endl;
 
 	cout << "Info on fourth student:" << endl;
-	// s4.printInfo();
+	s4.printInfo();
 	cout << endl << endl;
 
 	// Wait for user

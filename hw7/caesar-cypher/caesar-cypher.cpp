@@ -14,22 +14,42 @@ using std::string;
 using std::map;
 
 void userRequestedInput() {
+    std::string program_line;
     std::string message_input = "";
     int integer_input = 0;
-    
+
     cout << "\nEnter a message to cypher (blank line to end): ";
-    cin >> message_input;
+    getline(cin, program_line);
+    cout << "" << endl;
 
-    cout << "Enter an integer to use as the shift: ";
-    cin >> integer_input;
+    for (int i = 0; i < program_line.size(); ++i){
+        if ((program_line[i] >= 'A' && program_line[i] <= 'Z') 
+        || (program_line[i] >= 'a' && program_line[i] <= 'z')) {
+            message_input += program_line[i];
+        }
+    }
 
-    cout << "\nResult: TODO";
+    program_line = message_input;
+    cout << "String Output (with removed characters): " << program_line;
+    cout << endl;
+
+    cout << "\nResult:";
     cout << "\nMessage Input = " << message_input;
     cout << "\nInteger Input = " << integer_input;
 }
 
-int main() {
+int main(int argc, char *argv[]) {
     cout << "Caesar Cypher" << endl;
     userRequestedInput();
     cout << "\n\nProgram Complete" << endl;
+
+    cout << "" << endl;
+    cout << "Press ENTER to quit or another string of characters to cypher... ";
+
+    while (cin.get() != '\n') {
+        cout << ">>";
+        userRequestedInput();
+    }
+
+    return 0;
 }

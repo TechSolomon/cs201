@@ -1,4 +1,5 @@
 // Color3.hpp
+// Solomon Himelbloom
 // Interface for Color3 class
 // Original Author: Jonathan Metzgar
 // CS 201 course

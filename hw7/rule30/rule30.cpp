@@ -26,6 +26,8 @@ using std::ifstream;
 
 /*
     Rule 30 Formula: New = Left XOR (Center OR Right)
+    Current: 111 | 110 | 101 | 100 | 011 | 010 | 001 | 000
+    New: 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0
 */
 
 // Print 10x10 formatted block of intergers.
@@ -36,7 +38,7 @@ void printIntegersToFile() {
     ofstream output (file_name, ofstream::out);
 
     for (int i = 0; i < 100; i++) {
-        square.push_back(1 + i);
+        square.push_back(0);
     }
     
     for (std::size_t i = 0; i < square.size(); i++) {
@@ -64,6 +66,6 @@ int main() {
     const string file_name = "rule30.txt";
 
     std::cout << "Hello, rule 30." << endl;
-    printTextToFile();
-    std::cout << "Printing process to " << file_name << " complete." << endl;
+    printIntegersToFile();
+    std::cout << "\nPrinting process to " << file_name << " complete." << endl;
 }

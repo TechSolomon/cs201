@@ -13,12 +13,7 @@ using std::endl;
 using std::string;
 using std::map;
 
-int main() {
-    cout << endl;
-    int placeholder = 999;
-    const string spacer = " ..... ";
-    const string divider = "\n-=-=-=-=-=-=-=-=-=-=-=-=-";
-
+void key_value_pairs() {
     map<string, int> m;
     m["Kodiak"] = 99615;
     m["Fairbanks"] = 99775;
@@ -33,37 +28,56 @@ int main() {
         cout << "Key: " << k << " | Value: " << v;
         cout << endl;
     }
+}
 
-    cout << divider << endl;
-    
-    cout << "\nCOUNTS:" << endl;
-    cout << "Words" 
-        << spacer << placeholder << endl;
-    cout << "Characters" 
-        << spacer << placeholder << endl;
-    cout << "Paragraphs" 
-        << spacer << placeholder << endl;
-    cout << "Sentences" 
-        << spacer << placeholder << endl;
+void text_format() {
+    int placeholder = 999;
+    const string spacer = " ..... ";
+    cout << "\n-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
+}
 
-    cout << divider << endl;
+void count_statistics() {
+    int words = 107;
+    int characters = 818;
+    int paragraphs = 1;
+    int sentences = 4;
 
-    cout << "\nAVERAGES:" 
-        << spacer << placeholder << endl;
-    cout << "Sentences per Paragraph" 
-        << spacer << placeholder << endl;
-    cout << "Words per Sentence" 
-        << spacer << placeholder << endl;
-    cout << "Characters per Word" 
-        << spacer << placeholder << endl;
+    cout << "\nCOUNTS" << endl;
+    cout << endl;
+    cout << "Words: " << words << endl;
+    cout << "Characters: " << characters << endl;
+    cout << "Paragraphs: " << paragraphs << endl;
+    cout << "Sentences: " << sentences << endl;
+}
 
-    cout << divider << endl;
+void average_statistics() {
+    int sentences_per_paragraph = 4;
+    float words_per_sentence = 26.7;
+    double characters_per_word = 6.7;
+
+    cout << "\nAVERAGES" << endl;
+    cout << endl;
+    cout << "Sentences per Paragraph: " << sentences_per_paragraph << endl;
+    cout << "Words per Sentence: " << words_per_sentence << endl;
+    cout << "Characters per Word: " << characters_per_word << endl;
+}
+
+void readability_statistics() {
+    int reading_ease = 0;
+    float grade_level = 24.2;
+    double passive_sentences = 25;
 
     cout << "\nREADABILITY" << endl;
-    cout << "Flesh Reading Ease" 
-        << spacer << placeholder << endl;
-    cout << "Flesh-Kincaid Grade Level" 
-        << spacer << placeholder << endl;
-    cout << "Passive Sentences" 
-        << spacer << placeholder << endl;
+    cout << endl;
+    cout << "Flesh Reading Ease: " << reading_ease << endl;
+    cout << "Flesh-Kincaid Grade Level: " << grade_level << endl;
+    cout << "Passive Sentences: " << passive_sentences << "%" << endl;
+}
+
+int main() {
+    count_statistics();
+    text_format();
+    average_statistics();
+    text_format();
+    readability_statistics();
 }

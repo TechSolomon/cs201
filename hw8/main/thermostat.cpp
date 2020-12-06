@@ -13,6 +13,37 @@ using std::endl;
 using std::string;
 using std::map;
 
+class Temperature {
+
+public:
+    Temperature() : _num(0) {
+
+    }
+
+    Temperature(int num) : _num(num) {
+
+    }
+
+    void setDegrees(int num) {
+
+    }
+
+    void printCurrent() const {
+        cout << _num << " " << units() << endl;
+    }
+private:
+    string units() const {
+        return "degrees Fahrenheit (°F)";
+    }
+    int _num;
+};
+
 int main() {
     std::cout << "Hello, thermostat." << endl;
+
+    Temperature f(32);
+
+    f.printCurrent();
+
+    return 0;
 }

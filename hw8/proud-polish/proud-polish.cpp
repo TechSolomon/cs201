@@ -28,11 +28,11 @@ Thus, we can see that there will actually be
 19th and 29th for one million and one billion, respectively.
 */
 
-double currentSquare (int square) {
+double currentSquare (int & square) {
     return pow(2, square - 1);
 }
 
-double previousSquare (int square) {
+double previousSquare (int & square) {
     double total = 0;
     for (int i = 1; i <= square; i++) {
         total = currentSquare(i);
@@ -54,7 +54,7 @@ int main() {
     for (i = 0; i < requested_square; i++) {
         previous_square += current_square;
         square_number += 1;
-        current_square = (pow(2, square_number + 1) - 1);
+        current_square = pow(2, square_number - 1);
         
         cout << "SQUARE #" << square_number << ":" << endl;
         cout << "current square: " << current_square << endl;

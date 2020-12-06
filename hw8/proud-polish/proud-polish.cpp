@@ -17,10 +17,12 @@ using std::map;
 hw2 (rice.cpp) --> proud-polish revision:
 
 The rice program contains incorrect calculations.
+
 You may notice that in your "previous square total", 
 the number will always be one less than the next power 
 of two (based on the mathematical sum of the series 2^i 
 from i=0 to n being equal to 2^(n+1) - 1). 
+
 Thus, we can see that there will actually be 
 1023 grains of rice on the 9th square, and similarly the 
 19th and 29th for one million and one billion, respectively.
@@ -52,7 +54,7 @@ int main() {
     for (i = 0; i < requested_square; i++) {
         previous_square += current_square;
         square_number += 1;
-        current_square = pow(2, square_number - 1);
+        current_square = (pow(2, square_number + 1) - 1);
         
         cout << "SQUARE #" << square_number << ":" << endl;
         cout << "current square: " << current_square << endl;
@@ -60,10 +62,10 @@ int main() {
         cout << " " << endl;
     }
 
-    cout << "cs201 – hw8 (proud-polish) questions..." << endl;
-    cout << "At least 1,000 (grains of rice): SQUARE #10" << endl;
-    cout << "At least 1,000,000 (grains of rice): SQUARE #21" << endl;
-    cout << "At least 1,000,000,000 (grains of rice): SQUARE #31" << endl;
+    cout << "cs201: hw8 (proud-polish) questions..." << endl;
+    cout << "At least 1,000 (grains of rice): SQUARE #9" << endl;
+    cout << "At least 1,000,000 (grains of rice): SQUARE #19" << endl;
+    cout << "At least 1,000,000,000 (grains of rice): SQUARE #29" << endl;
     cout << "Largest number (int): SQUARE #31" << endl;
     cout << "Largest number (float): SQUARE #1024" << endl;
 }

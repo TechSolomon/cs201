@@ -25,6 +25,12 @@ public:
 
     string toString() const;
 
+    string perceive() const;
+
+    void think();
+
+    string Act() const;
+
 private:
     int _id;
 };

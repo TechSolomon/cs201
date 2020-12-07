@@ -25,6 +25,10 @@ public:
 
     string toString() const;
 
+    // Changes the temperature by 1 or -1 depending 
+    // on whether the header is on or off.
+    bool iteration();
+
 private:
     int _id;
 };

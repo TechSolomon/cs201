@@ -60,12 +60,14 @@ int main() {
 
     // default agent constructor
     Agent a1;
-    a1.setID(1);
+    a1.setID(0);
+    cout << "What is the current temperature?" << endl;
+    cout << endl;
     cout << a1.toString();
     cout << std::endl;
 
     // 2nd agent constructor
-    Agent a2(2);
+    Agent a2(32);
     cout << a2.getID();
     cout << std::endl;
 
@@ -73,12 +75,12 @@ int main() {
 
     // default environment constructor
     Environment e1;
-    e1.setID(3);
+    e1.setID(40);
     cout << e1.toString();
     cout << std::endl;
 
     // 2nd environment constructor
-    Environment e2(4);
+    Environment e2(-40);
     cout << e2.getID();
     cout << std::endl;
 
@@ -86,12 +88,12 @@ int main() {
 
     // default simulator constructor
     Simulator s1;
-    s1.setID(5);
+    s1.setID(100);
     cout << s1.toString();
     cout << std::endl;
 
     // 2nd environment constructor
-    Simulator s2(6);
+    Simulator s2(212);
     cout << s2.getID();
     cout << std::endl;
 

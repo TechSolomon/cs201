@@ -25,6 +25,11 @@ public:
 
     string toString() const;
 
+    // Initializes the running sequence.
+    void run();
+
+    void askOwner();
+
 private:
     int _id;
 };

@@ -36,3 +36,16 @@ int Environment::getID() const {
 string Environment::toString() const {
     return "Environment #" + to_string(_id);
 }
+
+// bool Environment::iteration {
+//     int heater();
+//     heater = 0;
+
+//     if (heater = 0) {
+//         heater += 1;
+//         return true;
+//     } else {
+//         heater -= 1;
+//         return false;
+//     }
+// }

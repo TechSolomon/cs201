@@ -13,6 +13,10 @@ using std::endl;
 using std::string;
 using std::map;
 
+#include "agent.hpp"
+#include "environment.hpp"
+#include "simulator.hpp"
+
 class Temperature {
 
 public:

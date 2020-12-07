@@ -9,6 +9,22 @@ using std::to_string;
 
 #include "agent.hpp"
 
+// constructors
+Agent::Agent() 
+    : _id{0} {
+
+    }
+
+Agent::Agent(int id) 
+    : _id {id} {
+
+    }
+
+// destructor
+Agent::~Agent() {
+
+}
+
 void Agent::setID(int id) {
     _id = id;
 }

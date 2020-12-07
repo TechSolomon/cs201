@@ -9,6 +9,22 @@ using std::to_string;
 
 #include "environment.hpp"
 
+// constructors
+Environment::Environment() 
+    : _id{0} {
+
+    }
+
+Environment::Environment(int id) 
+    : _id {id} {
+
+    }
+
+// destructor
+Environment::~Environment() {
+
+}
+
 void Environment::setID(int id) {
     _id = id;
 }

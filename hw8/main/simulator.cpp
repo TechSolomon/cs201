@@ -9,6 +9,22 @@ using std::to_string;
 
 #include "simulator.hpp"
 
+// constructors
+Simulator::Simulator() 
+    : _id{0} {
+
+    }
+
+Simulator::Simulator(int id) 
+    : _id {id} {
+
+    }
+
+// destructor
+Simulator::~Simulator() {
+
+}
+
 void Simulator::setID(int id) {
     _id = id;
 }

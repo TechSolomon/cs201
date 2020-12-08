@@ -59,15 +59,18 @@ bool readFile(const string & filename) {
 	return true;  // DUMMY return
 }
 
+// Improve the overall readability of the printed values.
 void textFormat() {
     int placeholder = 999;
     const string spacer = " ..... ";
     cout << "\n-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
 }
 
+// Initial word count values.
 void countStatistics() {
-    int words = 999999999;
-    int characters = 999999999;
+    int words = 0;
+    int lines = 0;
+    int characters = 0;
     int paragraphs = 0;
     int sentences = 0;
 
@@ -79,6 +82,8 @@ void countStatistics() {
     cout << "Sentences: " << sentences << endl;
 }
 
+
+// TODO: Detailed calculations from countStatistics().
 void averageStatistics() {
     int sentences_per_paragraph = 0;
     float words_per_sentence = 00.0;
@@ -91,6 +96,7 @@ void averageStatistics() {
     cout << "Characters per Word: " << characters_per_word << endl;
 }
 
+// Final readability scores from the number of syllables in each word.
 void readabilityStatistics() {
     int reading_ease = 0;
     float grade_level = 00.0;
@@ -107,7 +113,7 @@ int main() {
     // File to write & read
     const string fname = "writing-samples/university-of-alaska.txt";
 
-    cout << "Reading file..." << endl;
+    cout << "Reading the requested file & printing contents below:" << endl;
 	cout << endl;
 	bool readsuccess = readFile(fname);
 

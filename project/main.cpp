@@ -22,23 +22,6 @@ using std::random_device;
 using std::mt19937;
 using std::uniform_int_distribution;
 
-void keyValuePairs() {
-    map<string, int> m;
-    m["Kodiak"] = 99615;
-    m["Fairbanks"] = 99775;
-    m["UAF"] = 10011;
-    m["Alaska"] = 907;
-    m["United States"] = 50;
-    m.erase("UAF");
-
-    for (const auto & p : m) {
-        auto k = p.first; // Key
-        auto v = p.second; // Associated Value
-        cout << "Key: " << k << " | Value: " << v;
-        cout << endl;
-    }
-}
-
 /**
  * Read a file and print it to the console.
  * @param filename name of the file
@@ -83,10 +66,10 @@ void textFormat() {
 }
 
 void countStatistics() {
-    int words = 107;
-    int characters = 818;
-    int paragraphs = 1;
-    int sentences = 4;
+    int words = 999999999;
+    int characters = 999999999;
+    int paragraphs = 0;
+    int sentences = 0;
 
     cout << "\nCOUNTS" << endl;
     cout << endl;
@@ -97,9 +80,9 @@ void countStatistics() {
 }
 
 void averageStatistics() {
-    int sentences_per_paragraph = 4;
-    float words_per_sentence = 26.7;
-    double characters_per_word = 6.7;
+    int sentences_per_paragraph = 0;
+    float words_per_sentence = 00.0;
+    double characters_per_word = 0.0;
 
     cout << "\nAVERAGES" << endl;
     cout << endl;
@@ -110,8 +93,8 @@ void averageStatistics() {
 
 void readabilityStatistics() {
     int reading_ease = 0;
-    float grade_level = 24.2;
-    double passive_sentences = 25;
+    float grade_level = 00.0;
+    double passive_sentences = 0;
 
     cout << "\nREADABILITY" << endl;
     cout << endl;

@@ -31,7 +31,8 @@ bool readFile(const string & filename) {
 
 	ifstream file(filename);
 
-	while(true) { // read the file
+    // Read the requested file.
+	while(true) {
 		string new_line;
 		getline(file, new_line);
 
@@ -40,12 +41,15 @@ bool readFile(const string & filename) {
 				std::cout << "Finished reading file." << std::endl;
 				return true;
 			}
+
 			else {
 				std::cout << "Error during transit." << std::endl;
 				return false;
 			}
+
 			break; // or return, as required
 		}
+
 		// process text in each line as required
 		std::cout << new_line << std::endl;
 	}
@@ -55,8 +59,8 @@ bool readFile(const string & filename) {
 		return false;
 	}
 
-	cout << filename;  // DUMMY output
-	return true;  // DUMMY return
+	cout << filename;
+	return true;
 }
 
 // Improve the overall readability of the printed values.
@@ -117,10 +121,10 @@ int main() {
 	cout << endl;
 	bool readsuccess = readFile(fname);
 
-	textFormat();
-    countStatistics();
-    textFormat();
-    averageStatistics();
-    textFormat();
-    readabilityStatistics();
+	// textFormat();
+    // countStatistics();
+    // textFormat();
+    // averageStatistics();
+    // textFormat();
+    // readabilityStatistics();
 }

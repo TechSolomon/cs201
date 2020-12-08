@@ -49,10 +49,10 @@ bool readFile(const string & filename) {
 				return false;
 			}
 
-			break; // or return, as required
+			break; // Break or return as required.
 		}
 
-		// process text in each line as required
+		// Process text in each line as required.
 		std::cout << new_line << std::endl;
 	}
 
@@ -65,7 +65,10 @@ bool readFile(const string & filename) {
 	return true;
 }
 
-// TODO: Strip characters and symbols from writing sample.
+// TODO: Strip special characters and symbols from writing sample.
+const std::string stripSymbols = ".,:;+-*/=()[]{}<>!?@#$%^&*()";
+
+// Count the total amount of words in a given text file.
 void countWords(const string & filename) {
     ifstream file(filename);
     if (!file) {
@@ -93,15 +96,9 @@ void countWords(const string & filename) {
     
     map<string, int>::iterator i;
     for (i = total.begin(); i != total.end(); i++) {
-        cout << i -> second << "\t" << i -> first << "\n";
+        cout << i -> second << "            " 
+             << i -> first << "\n";
     }
-}
-
-// Improve the overall readability of the printed values.
-void textFormat() {
-    int placeholder = 999;
-    const string spacer = " ..... ";
-    cout << "\n-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
 }
 
 // Initial word count values.
@@ -120,7 +117,7 @@ void countStatistics() {
     cout << "Sentences: " << sentences << endl;
 }
 
-// TODO: Detailed calculations from countStatistics().
+// Detailed calculations from countStatistics().
 void averageStatistics() {
     int sentences_per_paragraph = 0;
     float words_per_sentence = 00.0;
@@ -146,27 +143,27 @@ void readabilityStatistics() {
     cout << "Passive Sentences: " << passive_sentences << "%" << endl;
 }
 
+// Improve the overall readability of the printed values.
+void textFormat() {
+    int placeholder = 999;
+    const string spacer = " ..... ";
+    cout << endl;
+    cout << "-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
+    cout << endl;
+}
+
 int main() {
-    // File to write & read
+    // File to read and write.
     const string fname = "writing-samples/university-of-alaska.txt";
 
     cout << "Reading the requested file & printing contents below:" << endl;
 	cout << endl;
 	bool readsuccess = readFile(fname);
 
-	textFormat();
-    countStatistics();
     textFormat();
-    averageStatistics();
-    textFormat();
-    readabilityStatistics();
-    textFormat();
-
-    cout << endl;
     tableFormat();
     countWords(fname);
-    cout << endl;
-    countCharacters();
+    textFormat();
 
     // Wait for user input.
     cout << "PRESS ENTER ";

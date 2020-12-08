@@ -10,6 +10,7 @@
 #include <random>
 #include <fstream>
 #include <sstream>
+#include <iomanip>
 using std::cin;
 using std::cout;
 using std::endl;
@@ -27,6 +28,7 @@ using std::uniform_int_distribution;
 // Neatly organizes the key and associated value pairs.
 void tableFormat() {
     cout << "VALUE (#) | KEY (word)" << endl;
+    cout << std::setfill('-') << std::setw(22) << "-" <<endl;
 }
 
 // TODO: Find the total amount of characters in a given file.

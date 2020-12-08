@@ -22,6 +22,8 @@ using std::random_device;
 using std::mt19937;
 using std::uniform_int_distribution;
 
+#include "statistics.hpp"
+
 /**
  * Read a file and print it to the console.
  * @param filename name of the file
@@ -127,4 +129,15 @@ int main() {
     // averageStatistics();
     // textFormat();
     // readabilityStatistics();
+
+    cout << endl;
+
+    tableFormat();
+    countCharacters();
+
+    // Wait for user input.
+    // cout << "PRESS ENTER ";
+    // while (cin.get() != '\n');
+
+    return 0;
 }

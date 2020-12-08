@@ -29,36 +29,8 @@ void tableFormat() {
     cout << "VALUE (#) | KEY (word)" << endl;
 }
 
-// TODO: Strip characters and symbols from writing sample.
-void countWords(const string & filename) {
-    ifstream file(filename);
-    if (!file) {
-        if (file.eof()) {
-            std::cout << "Finished reading file." << std::endl;
-        }
-        else {
-            std::cout << "Error during transit." << std::endl;
-            exit(1);
-        }
-    }
-
-    map<string, int> total;
-    string word;
-}
-
 // TODO: Find the total amount of characters in a given file.
 // (https://www.cplusplus.com/reference/istream/istream/gcount/)
 void countCharacters() {
-    cout << "Counted characters here." << endl;
+    cout << "TODO: Counted characters here." << endl;
 }
-
-// int main() {
-//     // File to read and ingest for readability statistics. 
-//     const string fname = "writing-samples/university-of-alaska.txt";
-    
-//     tableFormat();
-//     countWords(fname);
-//     countCharacters();
-
-//     return 0;
-// }

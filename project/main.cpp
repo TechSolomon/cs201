@@ -65,6 +65,38 @@ bool readFile(const string & filename) {
 	return true;
 }
 
+// TODO: Strip characters and symbols from writing sample.
+void countWords(const string & filename) {
+    ifstream file(filename);
+    if (!file) {
+        if (file.eof()) {
+            std::cout << "Finished reading file." << std::endl;
+        }
+        else {
+            std::cout << "Error during transit." << std::endl;
+            exit(1);
+        }
+    }
+
+    map<string, int> total;
+    string word;
+
+    while (file >> word) {
+        if (total.find(word) != total.end()) {
+            total[word]++;
+        }
+
+        else {
+            total[word] = 1;
+        }
+    }
+    
+    map<string, int>::iterator i;
+    for (i = total.begin(); i != total.end(); i++) {
+        cout << i -> second << "\t" << i -> first << "\n";
+    }
+}
+
 // Improve the overall readability of the printed values.
 void textFormat() {
     int placeholder = 999;
@@ -87,7 +119,6 @@ void countStatistics() {
     cout << "Paragraphs: " << paragraphs << endl;
     cout << "Sentences: " << sentences << endl;
 }
-
 
 // TODO: Detailed calculations from countStatistics().
 void averageStatistics() {
@@ -123,21 +154,23 @@ int main() {
 	cout << endl;
 	bool readsuccess = readFile(fname);
 
-	// textFormat();
-    // countStatistics();
-    // textFormat();
-    // averageStatistics();
-    // textFormat();
-    // readabilityStatistics();
+	textFormat();
+    countStatistics();
+    textFormat();
+    averageStatistics();
+    textFormat();
+    readabilityStatistics();
+    textFormat();
 
     cout << endl;
-
     tableFormat();
+    countWords(fname);
+    cout << endl;
     countCharacters();
 
     // Wait for user input.
-    // cout << "PRESS ENTER ";
-    // while (cin.get() != '\n');
+    cout << "PRESS ENTER ";
+    while (cin.get() != '\n');
 
     return 0;
 }

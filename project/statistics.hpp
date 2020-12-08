@@ -8,8 +8,6 @@
 
 void tableFormat();
 
-// void countWords(const string filename);
-
 void countCharacters();
 
 #endif /* STATISTICS_HPP_ */
